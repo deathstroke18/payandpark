@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1046839370292",
+    "project_id": "payandpark-2eb4b",
+    "storage_bucket": "payandpark-2eb4b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046839370292:android:6f560f76aec6ae56d5e061",
+        "android_client_info": {
+          "package_name": "arjun.co.payandpark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1046839370292-bvv12usjn4h3d7e1v3fijd1532sj5krs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjzSv2LNgiDG7ieVzgp22BPSz6T0nuIoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1046839370292-bvv12usjn4h3d7e1v3fijd1532sj5krs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
