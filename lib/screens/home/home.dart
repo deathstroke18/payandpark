@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:payandpark/services/auth.dart';
+import 'package:payandpark/screens/register.dart';
+import 'package:payandpark/screens/search/search.dart';
 
 
 class Home extends StatelessWidget {
@@ -68,7 +71,13 @@ class Home extends StatelessWidget {
                             Expanded(
                               child: InkWell(
                                 onTap: () {
-                                  print("container clicked");
+                                  String tim = Timestamp.now().toDate().toString();
+                                  var part = tim.split(" ");
+                                  var year = part[0].trim();
+                                    print(year);
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => FormScreen()),);
                                 },
 
                                 child: Container(
@@ -89,7 +98,6 @@ class Home extends StatelessWidget {
                             Expanded(
                               child: InkWell(
                                 onTap: () {
-                                  print("out clicked");
                                 },
                                 child: Container(
                                   height: 60,
@@ -131,6 +139,9 @@ class Home extends StatelessWidget {
                               child: InkWell(
                                 onTap: () {
                                   print("search clicked");
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => search()),);
                                 },
                                 child: Container(
                                   height: 60,

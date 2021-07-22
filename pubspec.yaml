@@ -20,6 +20,7 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.7.0 <3.0.0"
 
+
 dependencies:
   flutter:
     sdk: flutter
@@ -33,6 +34,10 @@ dependencies:
   firebase_core: ^1.1.1
   provider: ^5.0.0
   flutter_spinkit: "^4.1.2"
+  esc_pos_printer: ^4.0.3
+  qr_flutter: ^4.0.0
+  qrscan: ^0.3.2
+
 
 
 dev_dependencies:
@@ -49,6 +54,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/car2.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
