@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:payandpark/services/auth.dart';
 import 'package:payandpark/screens/register.dart';
 import 'package:payandpark/screens/search/search.dart';
-
+import 'package:payandpark/screens/out/out.dart';
 
 class Home extends StatelessWidget {
 
@@ -98,6 +98,9 @@ class Home extends StatelessWidget {
                             Expanded(
                               child: InkWell(
                                 onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => parkout()),);
                                 },
                                 child: Container(
                                   height: 60,

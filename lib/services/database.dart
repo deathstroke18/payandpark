@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:payandpark/services/sparams.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
 import 'package:payandpark/models/park.dart';
 //extract year
@@ -12,16 +13,19 @@ String poop;
 
 class DatabaseService {
 
+
+
   final String uid;
   DatabaseService({ this.uid });
 
-  // collection reference
+  // collection references
   final CollectionReference parkCollection = FirebaseFirestore.instance.collection(year);
+  final CollectionReference notParked = FirebaseFirestore.instance.collection('notparked');
 
-  Future updateUserData( String name, String vno, String pno, int rate ,String tim) async {
+  Future updateUserData( String name, String vno, String pno, int rate ,String tim, bool parked) async {
      poop = parkCollection.doc().id;
 
-     dynamic result = await scanner.generateBarCode(poop);
+     //dynamic result = await scanner.generateBarCode(poop);
      //print(result);
     return await parkCollection.doc(poop).set({
       'name': name,
@@ -29,7 +33,22 @@ class DatabaseService {
        'pno': pno,
        'rate': rate,
         'tim': tim,
+        'parked' : parked,
+        'vnoSearch' : setSearchParam(vno),
 
+
+    });
+  }
+
+  Future notParkedUserData( String name, String vno, String pno, int rate ,String tim, bool parked, var p) async {
+
+    return await notParked.doc(p).set({
+      'name': name,
+      'vno': vno,
+      'pno': pno,
+      'rate': rate,
+      'tim': tim,
+      'parked': parked,
     });
   }
   // park list from snapshot

@@ -8,6 +8,7 @@ import 'package:payandpark/services/print.dart';
 import 'package:payandpark/services/database.dart';
 
 String tim = Timestamp.now().toDate().toString();
+bool parked = true;
 
 class FormScreen extends StatefulWidget {
 
@@ -173,7 +174,7 @@ class FormScreenState extends State<FormScreen> {
                   onPressed: () async{
 
                     _formKey.currentState.save();
-                      await DatabaseService(uid: user.uid).updateUserData(name, vno, _phoneNumber, val , tim);
+                      await DatabaseService(uid: user.uid).updateUserData(name, vno, _phoneNumber, val , tim, parked);
 
 
                     this.setState(() {

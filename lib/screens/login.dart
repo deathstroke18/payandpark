@@ -51,7 +51,7 @@ class login extends StatelessWidget {
                           children: <Widget>[
                             Expanded(
                               child: InkWell(
-                                onTap: () async {
+                                onTap: () {
                                   print("container clicked");
                                 },
                                 child: Container(
@@ -68,6 +68,8 @@ class login extends StatelessWidget {
                             ),
                             SizedBox(width: 30),
                             Expanded(
+                              child: InkWell(
+                                onTap: () { print('tapped');},
                               child: Container(
                                 height: 50,
                                 decoration: BoxDecoration(
@@ -78,6 +80,7 @@ class login extends StatelessWidget {
                                   child: Text("Sasi", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25.0),),
                                 ),
                               ),
+                            ),
                             ),
                           ],
                         )

@@ -13,13 +13,13 @@ class _ParkListState extends State<ParkList> {
   @override
   Widget build(BuildContext context) {
 
-    final parks = Provider.of<List<Park>>(context);
+    final parks = Provider.of<List<Park>>(context) ?? [];
     //print(parks.docs);
     parks.forEach((park) {
-      print(park.name);
-      print(park.vno);
-      print(park.pno);
-      print(park.rate);
+      //print(park.name);
+      //print(park.vno);
+      //print(park.pno);
+      //print(park.rate);
     });
     return ListView.builder(
         itemCount: parks.length,
