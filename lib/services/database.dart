@@ -3,7 +3,8 @@ import 'package:payandpark/services/sparams.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
 import 'package:payandpark/models/park.dart';
 //extract year
-String tim = Timestamp.now().toDate().toString();
+Timestamp timer = Timestamp.now();
+String tim = timer.toDate().toString();
 var part = tim.split("-");
 var year = part[0].trim();
 var mon = part[0].trim();
@@ -20,9 +21,9 @@ class DatabaseService {
 
   // collection references
   final CollectionReference parkCollection = FirebaseFirestore.instance.collection(year);
-  final CollectionReference notParked = FirebaseFirestore.instance.collection('notparked');
+  final CollectionReference notParked = FirebaseFirestore.instance.collection('notParked');
 
-  Future updateUserData( String name, String vno, String pno, int rate ,String tim, bool parked) async {
+  Future updateUserData( String name, String vno, String pno, int rate ,Timestamp timer, bool parked) async {
      poop = parkCollection.doc().id;
 
      //dynamic result = await scanner.generateBarCode(poop);
@@ -32,7 +33,7 @@ class DatabaseService {
        'vno': vno,
        'pno': pno,
        'rate': rate,
-        'tim': tim,
+        'tim': timer,
         'parked' : parked,
         'vnoSearch' : setSearchParam(vno),
 
@@ -59,6 +60,7 @@ class DatabaseService {
             vno: doc.data()['vno'] ?? '0',
             pno: doc.data()['pno'] ?? '0',
             rate: doc.data()['rate'] ?? 0,
+            uid: doc.id,
           );
       }).toList();
   }

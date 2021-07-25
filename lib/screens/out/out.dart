@@ -22,10 +22,12 @@ class _parkoutState extends State<parkout> {
           backgroundColor: Colors.brown[700],
           title: Text('Out'),
         ),
-        body:
-                ,
+        body:Container(
+
+
+        )
       );
-      child:
+
 
   }
 }

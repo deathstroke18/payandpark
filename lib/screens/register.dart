@@ -7,7 +7,7 @@ import 'package:qrscan/qrscan.dart' as scanner;
 import 'package:payandpark/services/print.dart';
 import 'package:payandpark/services/database.dart';
 
-String tim = Timestamp.now().toDate().toString();
+Timestamp tim = Timestamp.now();
 bool parked = true;
 
 class FormScreen extends StatefulWidget {

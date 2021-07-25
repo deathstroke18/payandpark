@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payandpark/models/park.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
+import 'package:payandpark/services/parkOut.dart';
 String tim = Timestamp.now().toDate().toString();
 var part = tim.split("-");
 var year = part[0].trim();
@@ -16,6 +16,7 @@ class ParkTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Padding(
         padding: EdgeInsets.only(top: 0.8),
         child: Card(
@@ -27,7 +28,11 @@ class ParkTile extends StatelessWidget {
             ),
             title: Text(park.name),
             subtitle: Text('Vehicle no: ${park.vno} | Phone no: ${park.pno}'),
-
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => parkOut()),);
+                }
           ),
         ),
     );
